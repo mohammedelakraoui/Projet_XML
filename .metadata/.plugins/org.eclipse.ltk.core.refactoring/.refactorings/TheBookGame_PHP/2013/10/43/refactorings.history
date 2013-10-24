@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;TheBookGame_PHP/pages/mot_de_passe_oublier.php&apos; to &apos;mot_de_passe_oublie.php&apos;" description="Rename resource &apos;mot_de_passe_oublier.php&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="pages/mot_de_passe_oublier.php" name="mot_de_passe_oublie.php" stamp="1382629182974" updateReferences="true"/>
+</session>

@@ -1,0 +1,43 @@
+
+<html>
+    <head>
+  
+             <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    </head>
+    <body>
+		<div class="wrapper">
+			<h1>Livre ou vous êtes le heros</h1>
+			<h2>Bienvenu dans de vôtre livre ou vous êtes le heros <span> Iscrivez-vous maintenant </span> ! </h2>
+			<div class="content">
+				<div id="form_wrapper" class="form_wrapper">
+				
+				<form class="forgot_password">
+						<h3>Mot de passe oublié</h3>
+						<div>
+							<label>E-mail:</label>
+							<input type="text" placeholder="exemple@exemple.com" />
+							<span class="error">Format incorrect</span>
+						</div>
+						<div class="bottom">
+							<input type="submit" value="Envoyer"></input>
+							<a href="../index.php" rel="login" class="linkform">Page de connexion? Ici</a>
+							<a href="inscription.php" rel="register" class="linkform">Vous n'avez pas un compte? Inscrivez-vous ici</a>
+							<div class="clear"></div>
+						</div>
+					</form>
+			
+				</div>
+				<div class="clear"></div>
+			</div>
+	     	</div>
+		
+
+    </body>
+    
+    
+</html>
+
+
+<?php
+
+?>
