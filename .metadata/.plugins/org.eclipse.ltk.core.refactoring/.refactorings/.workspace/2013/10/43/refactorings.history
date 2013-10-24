@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;TheBookGame_PHP/Login.html&apos;" deleteContents="false" description="Delete resource &apos;TheBookGame_PHP/Login.html&apos;" element1="/TheBookGame_PHP/Login.html" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1382620626330"/>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;TheBookGame_PHP/Login.html&apos;" deleteContents="false" description="Delete resource &apos;TheBookGame_PHP/Login.html&apos;" element1="/TheBookGame_PHP/Login.html" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1382620626330"/>&#x0A;<refactoring comment="Delete resource &apos;TheBookGame_PHP&apos;" deleteContents="false" description="Delete resource &apos;TheBookGame_PHP&apos;" element1="/TheBookGame_PHP" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1382642605299"/>
 </session>
