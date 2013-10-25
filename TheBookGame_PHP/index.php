@@ -10,29 +10,25 @@
 			<div class="content">
 				<div id="form_wrapper" class="form_wrapper">
 				
-				
-					
-					<form class="login active">
+					<form action="index.php" class="login active" method="POST">
 						<h3>Login</h3>
 						<div>
 							<label>Nom utilisateur:</label>
-							<input type="text"  placeholder="Username"/>
+							<input type="text" name="user"   placeholder="Username"/>
 							<span class="error">Eurreur de saisie</span>
 						</div>
 						<div>
 							<label>Mot de passe : <a href="pages/mot_de_passe_oublie.php" rel="forgot_password" class="forgot linkform">Mot de passe oublié?</a></label>
-							<input type="password" placeholder="Password"/>
+							<input type="password" name="password" placeholder="Password"/>
 							<span class="error">Erreur de mot de passe</span>
 						</div>
 						<div class="bottom">
 							<div class="remember"><input type="checkbox" /><span>Garder ma session active</span></div>
-							<input type="submit" value="Login"></input>
+							<input type="submit" name="submit1" value="Login"></input>
 							<a href="pages/inscription.php" rel="register" class="linkform">Vous n'avez pas un compte ? Inscrivez-vous</a>
 							<div class="clear"></div>
 						</div>
 					</form>
-					
-					
 					
 				
 				</div>
@@ -47,7 +43,40 @@
     
 </html>
 
-
 <?php
+
+
+if(!Empty($_POST['user']) && !Empty($_POST['password'])  )
+{
+
+$user= $_POST["user"];
+$password= $_POST["password"];
+
+if (file_exists('src/authentification.xml')) {
+ $xml = simplexml_load_file('src/authentification.xml');
+ 
+//foreach ($xml as xml)
+foreach ($xml->utilisateur as $Mombre)
+	{
+		if($Mombre-> user == $user && $Mombre -> password== $password)
+		{	
+			//print "Vous etes connecter";
+			header('Location: pages/interface_jeu.php');
+		}
+		else {
+			
+			echo '<span> Erreur de connexion</span>';
+		}
+	}
+
+} 
+else 
+{
+exit('Echec lors de l\'ouverture du fichier authentification.xml.');
+}
+
+}
+ 
+
 
 ?>
