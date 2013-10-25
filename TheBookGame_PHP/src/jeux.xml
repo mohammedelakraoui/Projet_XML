@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:livre xmlns:p="http://www.esgi.fr/2013/ProjetXML" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.esgi.fr/2013/ProjetXML ProjetXML_Schema.xsd">
+	
+<jeu titre="Les guerriers XML">
+	<situation>
+		<code>1</code>
+		<exposition>Vous etes sur la route entre Wielstadt et Arrakis; tout d'un coup, un vampire surgit</exposition>
+			<question>
+				<label>Que decidez-vous?</label>
+				<choix>
+					<rep val="1">Vous le combatez avec un pistolet</rep>
+					<rep val="2">Vous le combatez avec un pieux en argent</rep>
+					<rep val="3">Vous l'embrassez</rep>
+				</choix>
+				<suivant>
+					<si>
+						<test val="1"><code>254</code></test>
+						<test val="2"><code>12</code></test>
+						<test val="3"><code>115</code></test>
+						<test val="autre"><code>1</code></test>
+					</si>
+				</suivant>
+			</question>
+	</situation>
+	<situation>
+		<code>254</code>
+		<exposition>fin du jeu</exposition>
+	</situation>
+	<situation>
+		<code>115</code>
+	</situation>
+</jeu>
+</p:livre>
