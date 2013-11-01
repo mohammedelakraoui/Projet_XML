@@ -11,39 +11,39 @@
 			<div class="content">
 				<div id="form_wrapper" class="form_wrapper">
 				
-					<form class="register" >
+					<form class="register" Method="POST">
 						<h3>Inscription</h3>
 						<div class="column">
 							<div>
 								<label>Nom:</label>
-								<input type="text" placeholder="First name" />
+								<input type="text" placeholder="First name" name="nom" />
 								<span class="error">Erreur de saisie</span>
 							</div>
 							<div>
 								<label>Prénom:</label>
-								<input type="text" placeholder="Last Name"/>
+								<input type="text" placeholder="Last Name" name="prenom"/>
 								<span class="error">TErreur de saisie</span>
 							</div>
 							<div>
 								<label>Site Web:</label>
-								<input type="text" value="http://" placeholder="WebSite"/>
+								<input type="text" value="http://" placeholder="WebSite" name="website"/>
 								<span class="error">Erreur de saisie</span>
 							</div>
 						</div>
 						<div class="column">
 							<div>
 								<label>Nom utilisateur:</label>
-								<input type="text" placeholder="UserName"/>
+								<input type="text" placeholder="UserName" name="user"/>
 								<span class="error">Erreur de saisie</span>
 							</div>
 							<div>
 								<label>E-mail:</label>
-								<input type="text" placeholder="exemple@exemple.com"/>
+								<input type="text" placeholder="exemple@exemple.com" name="email"/>
 								<span class="error">Erreur de saisie</span>
 							</div>
 							<div>
 								<label>Mot de passe:</label>
-								<input type="password" placeholder="PassWord"/>
+								<input type="password" placeholder="PassWord" name="password"/>
 								<span class="error">Erreur de saisie</span>
 							</div>
 						</div>
@@ -72,5 +72,39 @@
 
 
 <?php
+
+if(!Empty($_POST['nom']) && !Empty($_POST['prenom']) && !Empty($_POST['user']) && !Empty($_POST['password']) && !Empty($_POST['email'])  )
+{
+$nom=$_POST["nom"];
+$prenom=$_POST["prenom"];
+$website=$_POST["website"];
+$user=$_POST["user"];
+$email=$_POST["email"];
+$password=$_POST["password"];
+
+
+
+//$file_= fopen("../src/authentification.xml", "w");
+if (file_exists("../src/authentification.xml")) {
+
+    $xml = simplexml_load_file("../src/authentification.xml");
+    $root_utilisateurs = new SimpleXMLElement($xml->asXML());
+	$utilisateur= $root_utilisateurs-> addChild('utilisateur');
+ //   $xml->utilisateurs->addChild('utilisteur');
+	$utilisateur ->addChild('nom', $nom);
+	$utilisateur->addChild('prenom', $prenom);
+	$utilisateur->addChild('website', $website);
+	$utilisateur->addChild('user', $user);
+	$utilisateur->addChild('email', $email);
+	$utilisateur->addChild('password', $password);
+	
+	 $root_utilisateurs -> asXML("../src/authentification.xml");
+	//echo $utilisateurs ->asXML();
+	
+ }
+ 
+}
+
+
 
 ?>
