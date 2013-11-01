@@ -65,7 +65,7 @@ foreach ($xml->utilisateur as $Mombre)
 		}
 		else {
 			
-			echo '<span> Erreur de connexion</span>';
+			echo '<span style="color:red;font-size: 14pt"> <MARQUEE>Erreur de connexion</MARQUEE></span>';
 		}
 	}
 

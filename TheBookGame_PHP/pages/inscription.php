@@ -49,7 +49,7 @@
 						</div>
 						<div class="bottom">
 							<div class="remember">
-								<input type="checkbox" />
+								<input type="checkbox" name="confirmer"/>
 								<span>Je confirme que  les terms de contrat "TheBookGame"</span>
 							</div>
 							<input type="submit" value="Register" />
@@ -73,8 +73,14 @@
 
 <?php
 
+
+
+
 if(!Empty($_POST['nom']) && !Empty($_POST['prenom']) && !Empty($_POST['user']) && !Empty($_POST['password']) && !Empty($_POST['email'])  )
 {
+	if (isset($_POST['confirmer'])) 
+	{
+		
 $nom=$_POST["nom"];
 $prenom=$_POST["prenom"];
 $website=$_POST["website"];
@@ -91,16 +97,22 @@ if (file_exists("../src/authentification.xml")) {
     $root_utilisateurs = new SimpleXMLElement($xml->asXML());
 	$utilisateur= $root_utilisateurs-> addChild('utilisateur');
  //   $xml->utilisateurs->addChild('utilisteur');
-	$utilisateur ->addChild('nom', $nom);
-	$utilisateur->addChild('prenom', $prenom);
-	$utilisateur->addChild('website', $website);
-	$utilisateur->addChild('user', $user);
-	$utilisateur->addChild('email', $email);
-	$utilisateur->addChild('password', $password);
-	
+  
+	$utilisateur ->addChild('nom',"\n".$nom."\n");
+	$utilisateur->addChild('prenom',"\n".$prenom."\n");
+	$utilisateur->addChild('website',"\n".$website."\n");
+	$utilisateur->addChild('user',"\n".$user."\n");
+	$utilisateur->addChild('email',"\n".$email."\n");
+	$utilisateur->addChild('password',"\n".$password."\n");
 	 $root_utilisateurs -> asXML("../src/authentification.xml");
-	//echo $utilisateurs ->asXML();
+	 header('Location: validation.php');
 	
+ }
+ 
+ }
+ 
+ else {
+ 	echo 'La checkbox n\'est pas cochée';
  }
  
 }
