@@ -7,7 +7,7 @@
     <body>
 		<div class="wrapper">
 			<h1>Livre ou vous êtes le heros</h1>
-			<h2>Bienvenu dans  vôtre livre,là ou vous êtes le heros <span> Iscrivez-vous maintenant </span> ! </h2>
+			<h2>Bienvenue dans  vôtre livre,là ou vous êtes le heros <span> Iscrivez-vous maintenant </span> ! </h2>
 			<div class="content">
 				<div id="form_wrapper" class="form_wrapper">
 				

@@ -24,6 +24,9 @@
 				</suivant>
 			</question>
 	</situation>
+	
+	
+	
 	<situation>
 		<code>254</code>
 		<exposition>fin du jeu</exposition>
@@ -31,5 +34,6 @@
 	<situation>
 		<code>115</code>
 	</situation>
+	
 </jeu>
 </p:livre>

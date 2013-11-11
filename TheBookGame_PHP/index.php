@@ -6,7 +6,7 @@
     <body>
 		<div class="wrapper">
 			<h1>Livre ou vous êtes le heros</h1>
-			<h2>Bienvenu dans  vôtre livre,là ou vous êtes le heros <span> THEBOOKGAME </span> Go! </h2>
+			<h2>Bienvenue dans  vôtre livre,là ou vous êtes le heros <span> THEBOOKGAME </span> Go! </h2>
 			<div class="content">
 				<div id="form_wrapper" class="form_wrapper">
 				
@@ -56,11 +56,12 @@ if (file_exists('src/authentification.xml')) {
  $xml = simplexml_load_file('src/authentification.xml');
  
 //foreach ($xml as xml)
-foreach ($xml->utilisateur as $Mombre)
+foreach ($xml->utilisateur as $Membre)
 	{
-		if($Mombre-> user == $user && $Mombre -> password== $password)
+		
+		if(trim($Membre-> user) == $user && trim($Membre -> password)==$password)
 		{	
-			//print "Vous etes connecter";
+			
 			header('Location: pages/interface_jeu.php');
 		}
 		else {
