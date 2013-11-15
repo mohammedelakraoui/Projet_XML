@@ -16,7 +16,7 @@
 
 			<table border="0">
 				<tr>
-					<td rowspan="4" style="width: 800px;">
+					<td rowspan="5" style="width: 800px;">
 
 
 
@@ -63,7 +63,7 @@
 										<input type="checkbox" name="confirmer" /> <span>Je confirme
 											que les terms de contrat "TheBookGame"</span>
 									</div>
-									<input type="submit" value="Register" /> <a href="../index.php"
+									<input type="submit" value="Register" /> <a href="home.php"
 										rel="login" class="linkform">Avez-vous déja un compte? cliquez
 										ici</a>
 									<div class="clear"></div>
@@ -74,26 +74,26 @@
 						</div>
 
 					</td>
-					<td><a href="../index.php"> <img class="image" alt="Deconnecter"
-							src="../img/Power.png" style="width: inherit; height: inherit;">
+					<td><a href="a_propos.php"> <img class="image" alt="Home"
+							src="../img/Home.png" style="width: 100px; height: 100px;">
 					</a>
 					</td>
 				</tr>
-				<tr>
-					<td><a href="../index.php"> <img class="image" alt="Home"
-							src="../img/Home.png" style="width: inherit; height: inherit;">
-					</a>
-					</td>
-
-				</tr>
-
 				<tr>
 					<td><a href="a_propos.php"> <img class="image"
 							alt="A Propos TheBookGame" src="../img/propos.png"
-							style="width: inherit; height: inherit;">
+							style="width: 100px; height: 100px;">
 					</a>
 					</td>
 
+				</tr>
+
+				<tr>
+
+					<td><a href="../index.php"> <img class="image" alt="Deconnecter"
+							src="../img/Power.png" style="width: 100px; height: 100px;">
+					</a>
+					</td>
 				</tr>
 			</table>
 

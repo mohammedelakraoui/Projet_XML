@@ -27,7 +27,7 @@
 
 						<div id="form_wrapper" class="form_wrapper">
 
-							<form action="index.php" class="login active" method="POST">
+							<form action="pages/home.php" class="login active" method="POST">
 								<h3>Login</h3>
 								<div>
 
@@ -47,8 +47,8 @@
 									<div class="remember">
 										<input type="checkbox" /><span>Garder ma session active</span>
 									</div>
-									<input type="submit" name="submit1" value="Login"></input> <a
-										href="pages/inscription.php" rel="register" class="linkform">Vous
+									<input type="submit" name="submit1" value="Login"></input> 
+									<a href="pages/inscription.php" rel="register" class="linkform">Vous
 										n'avez pas un compte ? Inscrivez-vous</a>
 									<div class="clear"></div>
 								</div>
@@ -58,29 +58,30 @@
 
 						</div>
 
-
-
 					</td>
-					<td><a href="index.php"> <img class="image" alt="Deconnecter"
-							src="img/Power.png" style="width: inherit; height: inherit;">
-					</a>
-					</td>
-				</tr>
-				<tr>
-					<td><a href="index.php"> <img class="image" alt="Home"
-							src="img/Home.png" style="width: inherit; height: inherit;">
+
+					<td><a href="pages/a_propos.php"> <img class="image" alt="Home"
+							src="img/Home.png" style="width: 100px; height: 100px;">
 					</a>
 					</td>
 
-				</tr>
 
+				</tr>
 				<tr>
 					<td><a href="pages/a_propos.php"> <img class="image"
 							alt="A Propos TheBookGame" src="img/propos.png"
-							style="width: inherit; height: inherit;">
+							style="width: 100px; height: 100px;">
 					</a>
 					</td>
 
+				</tr>
+
+				<tr>
+
+					<td><a href="index.php"> <img class="image" alt="Deconnecter"
+							src="img/Power.png" style="width: 100px; height: 100px;">
+					</a>
+					</td>
 				</tr>
 			</table>
 
@@ -101,9 +102,6 @@
 		</div>
 	</div>
 
-
-
-
 	<?php
 
 	if(!Empty($_POST['user']) && !Empty($_POST['password'])  )
@@ -122,9 +120,9 @@
 				if(trim($Membre-> user) == $user && trim($Membre -> password)==$password)
 				{
 					session_start();
-					$_SESSION['user_']="".$Membre->user;
+					$_SESSION['utilisateur']="".$Membre->user;
 
-					header('location: pages/interface_jeu.php');
+					header('location: pages/home.php');
 				}
 				else {
 

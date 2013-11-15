@@ -15,7 +15,7 @@
 
 			<table border="0">
 				<tr>
-					<td rowspan="4" style="width: 800px;">
+					<td rowspan="6" style="width: 800px;">
 
 
 						<div id="form_wrapper" class="form_wrapper">
@@ -29,7 +29,7 @@
 								</div>
 								<div class="bottom">
 									<input type="submit" value="Envoyer"></input> <a
-										href="../index.php" rel="login" class="linkform">Page de
+										href="home.php" rel="login" class="linkform">Page de
 										connexion? Ici</a> <a href="inscription.php" rel="register"
 										class="linkform">Vous n'avez pas un compte? Inscrivez-vous ici</a>
 
@@ -39,27 +39,50 @@
 						</div>
 
 					</td>
-					<td><a href="../index.php"> <img class="image" alt="Deconnecter"
-							src="../img/Power.png" style="width: inherit; height: inherit;">
+
+					<td><a href="home.php"> <img class="image" alt="Home" title="Home"
+							src="../img/Home.png" style="width: 100px; height: 100px;">
 					</a>
 					</td>
 				</tr>
 				<tr>
-					<td><a href="../index.php"> <img class="image" alt="Home"
-							src="../img/Home.png" style="width: inherit; height: inherit;">
+					<td><a href="ajouter.php"> <img class="image"
+							title="Ajouter un jeu" src="../img/ajouter.png"
+							style="width: 100px; height: 100px;">
+					</a>
+					</td>
+				</tr>
+				<td><a href="modifier.php"> <img class="image"
+						title="Modifier un jeu" src="../img/modifier.png"
+						style="width: 100px; height: 100px;">
+				</a>
+				</td>
+				</tr>
+				<tr>
+					<td><a href="supprimer.php"> <img class="image"
+							title="Supprimer un/plusieurs jeux" alt="A Propos TheBookGame"
+							src="../img/Xion.png" style="width: 100px; height: 100px;">
 					</a>
 					</td>
 
 				</tr>
-
 				<tr>
-					<td><a href="a_propos.php"> <img class="image"
+					<td><a href="a_propos.php"> <img class="image" title="A propos"
 							alt="A Propos TheBookGame" src="../img/propos.png"
-							style="width: inherit; height: inherit;">
+							style="width: 100px; height: 100px;">
 					</a>
 					</td>
 
 				</tr>
+				<tr>
+					<td><a href="../index.php"> <img class="image" alt="Deconnecter"
+							title="Deconnexion" src="../img/Power.png"
+							style="width: 100px; height: 100px;">
+					</a>
+					</td>
+				</tr>
+
+
 			</table>
 
 			<div class="clear">
