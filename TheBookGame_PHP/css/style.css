@@ -134,7 +134,7 @@ form.forgot_password {
 	margin: 10px 0px 0px 0px;
 }
 
-.form_wrapper input[type="text"],.form_wrapper input[type="password"],select
+.form_wrapper input[type="text"],.form_wrapper input[type="password"]
 	{
 	border: solid 1px #E5E5E5;
 	background: #FFFFFF;
