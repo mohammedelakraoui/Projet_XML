@@ -27,7 +27,7 @@
 
 						<div id="form_wrapper" class="form_wrapper">
 
-							<form action="pages/home.php" class="login active" method="POST">
+							<form  class="login active" method="POST">
 								<h3>Login</h3>
 								<div>
 
@@ -104,40 +104,74 @@
 
 	<?php
 
-	if(!Empty($_POST['user']) && !Empty($_POST['password'])  )
+	require_once ('WS/lib/nusoap.php');
+	//Give it value at parameter
+	$param = array( 'username' => 'esgi',
+					'$password'=>'esgi'
+				  );
+	
+	//Create object that referer a web services
+	$client = new soapclient('http://localhost/ProjetXML/TheBookGame_PHP/WS/server.php');
+	//Call a function at server and send parameters too
+	$response = $client->call('get_message',$param);
+	//Process result
+	if($client->fault)
 	{
-
-		$user= $_POST["user"];
-		$password= $_POST["password"];
-
-		if (file_exists('src/authentification.xml')) {
-			$xml = simplexml_load_file('src/authentification.xml');
-
-			//foreach ($xml as xml)
-			foreach ($xml->utilisateur as $Membre)
-			{
-
-				if(trim($Membre-> user) == $user && trim($Membre -> password)==$password)
-				{
-					session_start();
-					$_SESSION['utilisateur']="".$Membre->user;
-
-					header('location: pages/home.php');
-				}
-				else {
-
-					echo '<span style="color:red;font-size: 14pt"> <MARQUEE>Erreur de connexion</MARQUEE></span>';
-				}
-			}
-
+		echo "FAULT: <p>Code: (".$client->faultcode."</p>";
+	
+		echo "String: ".$client->faultstring;
+	}
+	else
+	{
+		echo $response;
+	}
+	
+	
+//	if(!Empty($_POST['user']) && !Empty($_POST['password'])  )
+//	{
+//		$username=$_POST['user'];
+//	    $pass=	$_POST['password'];
+	    
+	/*	require_once ('WS/lib/nusoap.php');
+		//Give it value at parameter
+		$param = array( 'username' => 'esgi','password'=>'esgi');
+		//Create object that referer a web services
+		$client = new soapclient('http://localhost/ProjetXML/WS/server.php');
+		//Call a function at server and send parameters too
+		$response =	$client->call('authenticateUser',$param);
+		
+		print_r($response);
+		//echo $response;
+		
+		//Process result
+		if($client->fault)
+		{
+			//echo "FAULT: <p>Code: (".$client->faultcode."</p>";
+		
+		//	echo "String: ".$client->faultstring;
 		}
 		else
 		{
-			exit('Echec lors de l\'ouverture du fichier authentification.xml.');
+			//echo $response;
 		}
+		
+/*		if($response==false)
+		{
+	    	echo '<span style="color:red;font-size: 14pt"> <MARQUEE>Erreur de connexion</MARQUEE></span>';
+ 	
+		//	echo "String: ".$client->faultstring;
+		}
+		if($response==true)
+		{
+			//echo "ok";
+			//session_start();
+ 			//$_SESSION['utilisateur']="".$Membre->user;
+ 	//	header('Location: pages/home.php');
+		}*/
+ 
+	//}
 
-	}
-
+	
 
 
 	?>
