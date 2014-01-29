@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class="wrapper">
-		<h1>Livre ou vous êtes le heros</h1>
+		<h1>Livre dont vous êtes le heros</h1>
 		<h2>
 			Bienvenue dans vôtre livre,là ou vous êtes le heros <span> Recuperez
 				vos parametres de connexion </span> !
@@ -52,12 +52,7 @@
 					</a>
 					</td>
 				</tr>
-				<td><a href="modifier.php"> <img class="image"
-						title="Modifier un jeu" src="../img/modifier.png"
-						style="width: 100px; height: 100px;">
-				</a>
-				</td>
-				</tr>
+				
 				<tr>
 					<td><a href="supprimer.php"> <img class="image"
 							title="Supprimer un/plusieurs jeux" alt="A Propos TheBookGame"
@@ -75,7 +70,7 @@
 
 				</tr>
 				<tr>
-					<td><a href="../index.php"> <img class="image" alt="Deconnecter"
+					<td><a href="../index.php"> <img class="image" alt="Deconnecter" 
 							title="Deconnexion" src="../img/Power.png"
 							style="width: 100px; height: 100px;">
 					</a>

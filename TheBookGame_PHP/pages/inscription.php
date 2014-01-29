@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class="wrapper">
-		<h1>Livre ou vous êtes le heros</h1>
+		<h1>Livre dont vous êtes le heros</h1>
 		<h2>
 			Bienvenue dans vôtre livre,là ou vous êtes le heros <span>
 				Iscrivez-vous maintenant </span> !
@@ -74,7 +74,7 @@
 						</div>
 
 					</td>
-					<td><a href="a_propos.php"> <img class="image" alt="Home"
+					<td><a href="../index.php"> <img class="image" alt="Home"
 							src="../img/Home.png" style="width: 100px; height: 100px;">
 					</a>
 					</td>

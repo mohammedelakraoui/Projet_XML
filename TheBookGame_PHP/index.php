@@ -60,7 +60,7 @@
 
 					</td>
 
-					<td><a href="pages/a_propos.php"> <img class="image" alt="Home"
+					<td><a href="index.php"> <img class="image" title="Home"
 							src="img/Home.png" style="width: 100px; height: 100px;">
 					</a>
 					</td>
@@ -69,7 +69,7 @@
 				</tr>
 				<tr>
 					<td><a href="pages/a_propos.php"> <img class="image"
-							alt="A Propos TheBookGame" src="img/propos.png"
+							title="A Propos TheBookGame" src="img/propos.png"
 							style="width: 100px; height: 100px;">
 					</a>
 					</td>
@@ -78,7 +78,7 @@
 
 				<tr>
 
-					<td><a href="index.php"> <img class="image" alt="Deconnecter"
+					<td><a href="index.php"> <img class="image" alt="Deconnecter" title="Deconnexion"
 							src="img/Power.png" style="width: 100px; height: 100px;">
 					</a>
 					</td>
@@ -103,17 +103,54 @@
 	</div>
 
 	<?php
+/*
+	if(!Empty($_POST['user']) && !Empty($_POST['password'])  )
+	{
 
+		$user= $_POST["user"];
+		$password= $_POST["password"];
+
+		if (file_exists('src/authentification.xml')) {
+			$xml = simplexml_load_file('src/authentification.xml');
+
+			//foreach ($xml as xml)
+			foreach ($xml->utilisateur as $Membre)
+			{
+
+				if(trim($Membre-> user) == $user && trim($Membre -> password)==$password)
+				{
+					session_start();
+					$_SESSION['utilisateur']="".$Membre->user;
+
+					header('location: pages/home.php');
+				}
+				else {
+
+					echo '<span style="color:red;font-size: 14pt"> <MARQUEE>Erreur de connexion</MARQUEE></span>';
+				}
+			}
+
+		}
+		else
+		{
+			exit('Echec lors de l\'ouverture du fichier authentification.xml.');
+		}
+
+	}*/
+	if(!Empty($_POST['user']) && !Empty($_POST['password'])  )
+	{
+	
+    $user= $_POST["user"];
+	$password= $_POST["password"];
 	require_once ('WS/lib/nusoap.php');
 	//Give it value at parameter
-	$param = array( 'username' => 'esgi',
-					'$password'=>'esgi'
-				  );
-	
+	$param = array( 'username' => $user,
+			'password'=>$password
+			);
 	//Create object that referer a web services
 	$client = new soapclient('http://localhost/ProjetXML/TheBookGame_PHP/WS/server.php');
 	//Call a function at server and send parameters too
-	$response = $client->call('get_message',$param);
+	$response = $client->call('authenticateUser',$param);
 	//Process result
 	if($client->fault)
 	{
@@ -123,56 +160,20 @@
 	}
 	else
 	{
-		echo $response;
+	if($response=="true"){
+		session_start();
+		$_SESSION['utilisateur']="".$user;
+		
+		header('location: pages/home.php');
+		
+	}else{
+		
+		echo '<span style="color:red;font-size: 14pt"> <MARQUEE>Erreur de connexion</MARQUEE></span>';
+			
 	}
-	
-	
-//	if(!Empty($_POST['user']) && !Empty($_POST['password'])  )
-//	{
-//		$username=$_POST['user'];
-//	    $pass=	$_POST['password'];
-	    
-	/*	require_once ('WS/lib/nusoap.php');
-		//Give it value at parameter
-		$param = array( 'username' => 'esgi','password'=>'esgi');
-		//Create object that referer a web services
-		$client = new soapclient('http://localhost/ProjetXML/WS/server.php');
-		//Call a function at server and send parameters too
-		$response =	$client->call('authenticateUser',$param);
 		
-		print_r($response);
-		//echo $response;
-		
-		//Process result
-		if($client->fault)
-		{
-			//echo "FAULT: <p>Code: (".$client->faultcode."</p>";
-		
-		//	echo "String: ".$client->faultstring;
-		}
-		else
-		{
-			//echo $response;
-		}
-		
-/*		if($response==false)
-		{
-	    	echo '<span style="color:red;font-size: 14pt"> <MARQUEE>Erreur de connexion</MARQUEE></span>';
- 	
-		//	echo "String: ".$client->faultstring;
-		}
-		if($response==true)
-		{
-			//echo "ok";
-			//session_start();
- 			//$_SESSION['utilisateur']="".$Membre->user;
- 	//	header('Location: pages/home.php');
-		}*/
- 
-	//}
-
-	
-
+	}
+	}
 
 	?>
 
