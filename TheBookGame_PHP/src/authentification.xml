@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<utilisateurs>
+
+
+	<utilisateur>
+		<nom>
+			esgi
+		</nom>
+		<prenom>
+			esgi
+		</prenom>
+		<website>
+			http://esgi.fr
+		</website>
+		<user>
+			esgi
+		</user>
+		<email>
+			mohammed.elakraoui@gmail.com
+		</email>
+		<password>
+			esgi
+		</password>
+	</utilisateur>
+</utilisateurs>

@@ -1,0 +1,54 @@
+package com.esgi.ws;
+
+public class AddProxy implements com.esgi.ws.Add {
+  private String _endpoint = null;
+  private com.esgi.ws.Add add = null;
+  
+  public AddProxy() {
+    _initAddProxy();
+  }
+  
+  public AddProxy(String endpoint) {
+    _endpoint = endpoint;
+    _initAddProxy();
+  }
+  
+  private void _initAddProxy() {
+    try {
+      add = (new com.esgi.ws.AddServiceLocator()).getAdd();
+      if (add != null) {
+        if (_endpoint != null)
+          ((javax.xml.rpc.Stub)add)._setProperty("javax.xml.rpc.service.endpoint.address", _endpoint);
+        else
+          _endpoint = (String)((javax.xml.rpc.Stub)add)._getProperty("javax.xml.rpc.service.endpoint.address");
+      }
+      
+    }
+    catch (javax.xml.rpc.ServiceException serviceException) {}
+  }
+  
+  public String getEndpoint() {
+    return _endpoint;
+  }
+  
+  public void setEndpoint(String endpoint) {
+    _endpoint = endpoint;
+    if (add != null)
+      ((javax.xml.rpc.Stub)add)._setProperty("javax.xml.rpc.service.endpoint.address", _endpoint);
+    
+  }
+  
+  public com.esgi.ws.Add getAdd() {
+    if (add == null)
+      _initAddProxy();
+    return add;
+  }
+  
+  public java.lang.String afficher(java.lang.String name) throws java.rmi.RemoteException{
+    if (add == null)
+      _initAddProxy();
+    return add.afficher(name);
+  }
+  
+  
+}

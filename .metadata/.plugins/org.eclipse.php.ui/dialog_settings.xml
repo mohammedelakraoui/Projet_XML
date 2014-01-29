@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="PharPackageWizard">
+		<item value="0" key="PharPackageWizardPage.COMPRESS_TYPE"/>
+		<item value="MD5" key="PharPackageWizardPage.SIGNATURE_TYPE"/>
+		<item value="0" key="PharPackageWizardPage.EXPORT_TYPE"/>
+		<item value="false" key="PharPackageWizardPage.OVERWRITE"/>
+		<item value="true" key="PharPackageWizardPage.STUB_GENERATED"/>
+		<item value="false" key="PharPackageWizardPage.INCLUDE_DIRECTORY_ENTRIES"/>
+		<item value="true" key="PharPackageWizardPage.USE_SIGNATURE"/>
+		<item value="" key="PharPackageWizardPage.STUB_PATH"/>
+		<list key="PharPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="C:/Users/server-pc/Desktop/TheBookGame.jar"/>
+		</list>
+	</section>
+</section>

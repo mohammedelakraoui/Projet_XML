@@ -1,0 +1,8 @@
+package com.esgi.ws;
+
+public class Add {
+public String Afficher(string name)
+{
+	return "Hello, "+name;
+}
+}

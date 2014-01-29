@@ -1,0 +1,3 @@
+INDEX VERSION 1.126
+C:\wamp\www\Projet XML\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3717620180.index
+\WSClient\src

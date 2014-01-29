@@ -1,0 +1,5 @@
+INDEX VERSION 1.122+C:\wamp\www\Projet XML\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1199788451.index
+2618520722.index
+1075086287.index
+3406332793.index

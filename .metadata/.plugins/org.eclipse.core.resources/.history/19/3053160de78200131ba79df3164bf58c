@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.esgi.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.esgi.com" xmlns:intf="http://ws.esgi.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.esgi.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="Afficher">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="AfficherResponse">
+    <complexType>
+     <sequence>
+      <element name="AfficherReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="AfficherResponse">
+
+      <wsdl:part element="impl:AfficherResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="AfficherRequest">
+
+      <wsdl:part element="impl:Afficher" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Add">
+
+      <wsdl:operation name="Afficher">
+
+         <wsdl:input message="impl:AfficherRequest" name="AfficherRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:AfficherResponse" name="AfficherResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AddSoapBinding" type="impl:Add">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="Afficher">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AfficherRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AfficherResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AddService">
+
+      <wsdl:port binding="impl:AddSoapBinding" name="Add">
+
+         <wsdlsoap:address location="http://localhost:8080/WS/services/Add"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

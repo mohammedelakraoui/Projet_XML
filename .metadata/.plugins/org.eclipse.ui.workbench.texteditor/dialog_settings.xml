@@ -2,9 +2,9 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
-		<item value="240" key="DIALOG_Y_ORIGIN"/>
+		<item value="148" key="DIALOG_Y_ORIGIN"/>
 		<item value="381" key="DIALOG_HEIGHT"/>
-		<item value="765" key="DIALOG_X_ORIGIN"/>
+		<item value="931" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
@@ -13,20 +13,30 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="password" key="selection"/>
+		<item value="file_exists" key="selection"/>
 		<list key="findhistory">
-			<item value="PAssword"/>
-			<item value="forget"/>
-			<item value="form_wrapper"/>
-			<item value="register"/>
-			<item value="active"/>
-			<item value="wrapper"/>
-			<item value="images"/>
-			<item value="flipLink"/>
+			<item value="file_exists"/>
+			<item value="gestion_jeu"/>
+			<item value="jeux_version_beta"/>
+			<item value="tet"/>
+			<item value="a.xml"/>
+			<item value="$id"/>
+			<item value="&lt;livre&gt;"/>
+			<item value="test_ajouter.xml"/>
 		</list>
 		<list key="replacehistory">
-			<item value=""/>
-			<item value="login"/>
+			<item value="jeux_version_beta"/>
+			<item value="tet"/>
+			<item value="jeux_version_beta.xml"/>
+			<item value="a"/>
+			<item value="home.php"/>
+			<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt; "/>
+			<item value="utilisateur"/>
+			<item value="img"/>
 		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="247" key="DIALOG_Y_ORIGIN"/>
+		<item value="452" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

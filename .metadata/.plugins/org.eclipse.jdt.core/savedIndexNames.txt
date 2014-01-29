@@ -1,0 +1,2 @@
+INDEX VERSION 1.126+C:\wamp\www\Projet XML\.metadata\.plugins\org.eclipse.jdt.core
+3430527951.index

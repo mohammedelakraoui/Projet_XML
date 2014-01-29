@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:livres xmlns:p="http://www.esgi.fr/2013/ProjetXML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.esgi.fr/2013/ProjetXML ProjetXML_Schema.xsd">
+	<livre>
+		<jeu id="esgi" title="esgi aventure ">
+
+			<presentation>
+
+
+				Vous ouvrez les yeux subitement, l'esprit sortant de la
+				brume
+				anesthésiante, votre esprit vide, vide, vide...
+
+
+				Vous ne savez pas
+				où vous êtes...
+				Vous ne savez pas qui vous êtes...
+
+
+				Une douleur se
+				dissipe dans votre bras, en découvrant un infirmier
+				penché au-dessus
+				de votre figure.
+				On redresse votre siège. Deux hommes en complet se
+				tiennent devant
+				vous...
+				Le plus proche vous adresse la parole :
+
+				- Tiens
+				! Donc !
+				On se réveille !
+				Ça s'est bien passé, pas de complications.
+				T'as p'us d'l'air de te souvenir de ton nom !
+				T'es sûrement pas mal
+				perdu, fais que j'vais t'éclairer juste un peu...
+				Ok !
+
+			</presentation>
+
+			<situation>
+				<code>1</code>
+				<exposition code="1">
+
+					Tu vois ça ? C'est un implant identique à
+					celui qu'on vient de te
+					mettre dans le crâne et qui a pour effet de
+					te bloquer les parties
+					les plus précieuses de ta mémoire : ton passé
+					et ton identité.
+
+					Évidemment, ça prend un code pour t'enlever ça sans
+					aucun dommage...
+					pour ta lucidité... pis le code, c'est nous qui
+					l'avons... OK !
+					Fait que maintenant, tu travailles pour nous
+					autres... Ok !
+					On se comprend ?
+
+					Si tu veux retrouver ta mémoire
+					intacte, t'as intérêt à faire ce qu'on
+					te dit... Ok !
+					Sinon... On te
+					tue...
+
+
+				</exposition>
+				<question>
+					<label type="combobox">On se comprend ?</label>
+					<choix>
+						<rep val="1">Arracher l'arme</rep>
+						<rep val="2">Rester attentif</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>254</code>
+							</test>
+							<test val="2">
+								<code>115</code>
+							</test>
+							<test val="autre">
+								<code>1</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+			</situation>
+			<situation>
+				<code>254</code>
+				<exposition>
+					Fais pas de conneries !
+
+					Je suis sérieux avec ça !
+
+					On te
+					laissera pas deux chances... OK !
+
+				</exposition>
+
+				<question>
+					<label type="combobox">On se comprend ?</label>
+					<choix>
+						<rep val="1">Frapper</rep>
+						<rep val="2">Rester attentif</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>254</code>
+							</test>
+							<test val="2">
+								<code>115</code>
+							</test>
+							<test val="autre">
+								<code>1</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+			<situation>
+				<code>115</code>
+				<exposition>
+					Ça c'est Grunch !
+					C'est à lui que tu te rapportes... OK ?
+					Rappelle-toi
+					bien de ça :
+					Si t'es cool avec nous autres, on va l'être
+					avec toi...
+					Ok ?
+
+					À c't'heure tu suis Grunch, pis vous attendez au
+					bar...
+					Je vous
+					contacterai plus tard...
+				</exposition>
+				<question>
+					<label type="combobox">continuer</label>
+					<choix>
+						<rep val="1">Continuer</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>201</code>
+							</test>
+
+						</si>
+					</suivant>
+				</question>
+
+
+			</situation>
+
+			<situation>
+				<code>201</code>
+				<exposition>
+					Ça c'est Grunch !
+					C'est à lui que tu te rapportes... OK ?
+					Rappelle-toi
+					bien de ça :
+					Si t'es cool avec nous autres, on va l'être
+					avec toi...
+					Ok ?
+
+					À c't'heure tu suis Grunch, pis vous attendez au
+					bar...
+					Je vous
+					contacterai plus tard...
+				</exposition>
+				<question>
+					<label type="combobox">Action</label>
+					<choix>
+						<rep val="1">Commander un verre</rep>
+						<rep val="2">Vous diriger vers les toilettes</rep>
+						<rep val="3">Vous avancer discretement vers la sortie</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>202</code>
+							</test>
+							<test val="2">
+								<code>203</code>
+							</test>
+							<test val="3">
+								<code>204</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+			<situation>
+				<code>202</code>
+				<exposition>
+					Vous vous assoyez au bar...
+					- Qu'est-ce qu'on vous serre à
+					boire ?
+					Mais Grunch vous glisse au même moment une pinte de bière
+					blonde et
+					pétillante sous le nez.
+					Le barman n'insiste pas plus
+					longtemps et vaque à ses occupations...
+					Il finit par vous demandez
+					d'où vous venez...
+					- Vous êtes du coin ?
+					Il s'interrompt pour répondre
+					à un client...
+					... Il commence à faire frais... va fermer...
+					SOLARIS... ok Tony...
+					Vous en profiter pour vous soustraire à cette
+					question dont vous ne
+					savez pas vous-même la réponse.
+				</exposition>
+				<question>
+					<label type="combobox">Action</label>
+					<choix>
+						<rep val="1">Vous diriger vers les toilettes</rep>
+						<rep val="2">Vers la sortie</rep>
+						<rep val="3">Attendre</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>205</code>
+							</test>
+							<test val="2">
+								<code>206</code>
+							</test>
+							<test val="3">
+								<code>207</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+			<situation>
+				<code>203</code>
+				<exposition>
+					Vous revenez donc vers le corridor par où vous êtes
+					arrivé, avec devant
+					vous l'escalier qui mène à l'étage. La porte des
+					toilettes apparaît
+					plus au fond vers la gauche.
+					Vous remarquez aussi
+					un téléphone public sur le mur de droite...
+				</exposition>
+				<question>
+					<label type="combobox">Action</label>
+					<choix>
+						<rep val="1">Aller vers le phone</rep>
+						<rep val="2">Remonter à l'etage</rep>
+						<rep val="3">Entrer dans les toilettes</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>208</code>
+							</test>
+							<test val="2">
+								<code>209</code>
+							</test>
+							<test val="3">
+								<code>210</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+			<situation>
+				<code>210</code>
+				<exposition>
+					Vous entrez dans le cabinet, une petite fenêtre à
+					barreaux de fer donne
+					sur la ruelle derrière le bar, mais elle est
+					verrouillée avec une
+					serrure électronique...
+				</exposition>
+				<question>
+					<label type="text">Taper</label>
+					<choix>
+						<rep val="1"> Text </rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>305</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+			<situation>
+				<code>305</code>
+				<exposition>
+					Visiblement vous n'avez pas la bonne combinaison ou vous
+					avez du faire une mauvaise saisie...
+				</exposition>
+				<question>
+					<label type="combobox">Action</label>
+					<choix>
+						<rep val="1">Essayer une autre combinaison</rep>
+						<rep val="2">Sortir du cabinet</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>210</code>
+							</test>
+							<test val="2">
+								<code>203</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+			<situation>
+				<code>209</code>
+				<exposition>
+					Vous gravissez les marches de l'escalier et tombez face à
+					face avec
+					celui que vous vouliez fuire :
+					- QU'EST-CE QUE TU FAIS-LA ?
+					- J'PENSAIS QU'ON S'ETAIT COMPRIS...
+					ENVOYE AU BAR... TOUTE SUITE...
+					PIS ON S'EN VA !
+				</exposition>
+				<question>
+					<label type="combobox">Action</label>
+					<choix>
+						<rep val="1">Continuer</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>301</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+			<situation>
+				<code>208</code>
+				<exposition>
+					À peine avez vous saisi l'acoustique que vous tombez face
+					à face avec
+					celui que vous vouliez fuire :
+					- QU'EST-CE QUE TU FAIS-LA
+					?
+					- T'APPELE PAS LA POLICE TOUJOURS ?
+					- J'PENSAIS QU'ON S'ETAIT
+					COMPRIS...
+					ENVOYE AU BAR... TOUTE SUITE... PIS ONS'EN VA !
+				</exposition>
+				<question>
+					<label type="combobox">Action</label>
+					<choix>
+						<rep val="1">Continuer</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>300</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+			<situation>
+				<code>300</code>
+				<exposition>
+					- Eh ! Bien ! On peut dire que vous nous avez donnés
+					beaucoup de mal
+					! Mais nous y voici tout de même !
+					- Ceci est le
+					disque sur lequel est gravée la combinaison qui peut
+					sauver votre
+					mémoire...
+					...C'est une combinaison à 32 000 chiffres, inutile je
+					crois de vous faire
+					calculer le nombre de combinaisons possibles. Il
+					ne suffit que d'un
+					mauvais chiffre pour qu'il en soit fait de vous...
+					... Ce disque est en quelque sorte notre monnaie d'échange, car vous
+					allez nous rendre un petit service qui nous sera très utile... Je
+					vous suggère fortement de faire ce que nous vous dirons, Ok !
+				</exposition>
+				<question>
+					<label type="combobox">Action</label>
+					<choix>
+						<rep val="1">Continuer</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>300</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+
+			<situation>
+				<code>204</code>
+				<exposition>
+					Vous sortez du bar pour vous retrouver dans un coin de
+					rue. Il semble
+					que personne ne s'est encore aperçu de votre fuite.
+					En
+					face de vous, il y a l'Avenue Doar, qui va vers ce qui vous
+					apparaît
+					être le centre-ville. Sur votre droite s'allonge la Rue
+					Elleur et ses
+					commerces, un plan d'eau semble s'étendre très loin
+					au-delà...
+				</exposition>
+				<question>
+					<label type="combobox">Action</label>
+					<choix>
+						<rep val="1">Longer la rue ELLEUR</rep>
+						<rep val="2">Partir vers l'avenue DOAR</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>401</code>
+							</test>
+							<test val="2">
+								<code>402</code>
+							</test>
+
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+			<situation>
+				<code>401</code>
+				<exposition>
+					Vous n'avez pas fais 300 mètres lorsqu'une grosse
+					fourgonnette noire
+					s'arrête en trombe près de vous.
+					Grunch et deux
+					hommes sortent du véhicule et vous bondissent dessus pour
+					vous
+					entraîner à bord...
+				</exposition>
+				<question>
+					<label type="combobox">Action</label>
+					<choix>
+						<rep val="1">Continuer</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>300</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+			<situation>
+				<code>402</code>
+				<exposition>
+					En vous retournant pour vous assurer que l'on ne vous a
+					pas suivi,
+					vous apercevez Grunch au loin, sortant du bar...
+					Vous
+					empruntez une ruelle qui débouche sur l'avenue où vous vous
+					trouvez,
+					histoire de vous cacher et de le laisser s'éloigner...
+					Vous le voyez
+					passer quelques instants plus tard, de l'autre côté de
+					l'avenue...
+				</exposition>
+				<question>
+					<label type="combobox">Action</label>
+					<choix>
+						<rep val="1">Reprendre votre route sur l'avenue DAOR</rep>
+						<rep val="2">Vous enfoncer plus loin dans la ruelle</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>506</code>
+							</test>
+							<test val="2">
+								<code>507</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+			<situation>
+				<code>506</code>
+				<exposition>
+					Vous remontez donc sur l'avenue DOAR sur une assez longue
+					distance
+					longeant des murs de soutènement. Le soleil descend déjà à
+					l'horizon, vous voyez les lampadaires s'illuminer. Puis vous
+					débouchez sur un carrefour...
+					Une artère principale travers l'avenue,
+					vous découvrez le boulevard
+					Centrix, qui forme un square à cette
+					jonction. Vous sentez la
+					fatigue vous rejoindre peu à peu. Vous
+					grattez le fond de vos
+					poches... Tiens un peu de monnaie.
+					Sur votre
+					droite s'affaire un marchant dans son kiosque à journaux, à
+					côté du
+					quel se dressent deux cabines téléphoniques. Sur la gauche,
+					plusieurs taxis attendent d'éventuels clients.
+				</exposition>
+				<question>
+					<label type="combobox">Action</label>
+					<choix>
+						<rep val="1">Acheter le journal</rep>
+						<rep val="2">Monter dans un taxi</rep>
+						<rep val="3">Continue sur Centrix</rep>
+						<rep val="4">Continue sur DOAR</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>510</code>
+							</test>
+							<test val="2">
+								<code>511</code>
+							</test>
+							<test val="3">
+								<code>512</code>
+							</test>
+							<test val="4">
+								<code>513</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+			<situation>
+				<code>510</code>
+				<exposition>
+					Vous avancez vers le kiosque à journaux, feuilletant
+					différent éditions,
+					dont certaines en caractères qui vous semble
+					inconnu.
+					le marchand s'avance :
+					-Voici les dernières nouvelles... Ça
+					vous intéresse ?
+				</exposition>
+				<question>
+					<label type="combobox">Action</label>
+					<choix>
+						<rep val="1">Acheter le journal</rep>
+						<rep val="2">Monter dans un taxi</rep>
+						<rep val="3">Continue sur Centrix</rep>
+						<rep val="4">Continue sur DOAR</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>514</code>
+							</test>
+							<test val="2">
+								<code>515</code>
+							</test>
+							<test val="3">
+								<code>516</code>
+							</test>
+							<test val="4">
+								<code>517</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+			<situation>
+				<code>514</code>
+				<exposition>
+					Eh Voila....!!!!
+				</exposition>
+				<question>
+					<label type="pdf"/>
+					<choix>
+					</choix>
+					<suivant>
+						<si>
+
+						</si>
+					</suivant>
+				</question>
+
+			</situation>
+
+
+			<situation>
+				<code>254</code>
+				<exposition>
+					Vous succombez presque immédiatement...
+					Votre histoire
+					s'arrête ici...
+				</exposition>
+				<question>
+					<label type="combobox">
+						Fin!!!
+					</label>
+					<choix>
+						<rep val="1">Longer la rue ELLEUR</rep>
+						<rep val="2">Partir vers l'avenue DOAR</rep>
+					</choix>
+
+
+				</question>
+
+			</situation>
+
+		</jeu>
+		<jeu id="esgi" title="heros">
+			<situation>
+				<code>
+					125448
+				</code>
+				<exposition code="value">
+
+				</exposition>
+				<question>
+
+					<label type="">
+					</label>
+					<choix>
+					</choix>
+					<suivant>
+						<si>
+						</si>
+					</suivant>
+				</question>
+			</situation>
+		</jeu>
+
+		<jeu id="admin" title="administration">
+			<situation>
+				<code>12345
+				</code>
+				<exposition code="value">
+
+				</exposition>
+				<question>
+
+					<label type="">
+					</label>
+					<choix>
+					</choix>
+					<suivant>
+						<si>
+						</si>
+					</suivant>
+				</question>
+			</situation>
+		</jeu>
+		<jeu id="&#10;&#10;" title="&#10;esgi&#10;">
+			<situation>
+				<code>
+					125449
+				</code>
+				<exposition code="value">
+					aho
+				</exposition>
+				<question>
+					<label type="combobox">
+						heloo
+					</label>
+					<choix>
+						<rep val="1">
+							sds
+						</rep>
+						<rep val="2">
+							dsds
+						</rep>
+					</choix>
+					<suivant>
+						<si>
+							<test val="1">
+								<code>
+									519
+								</code>
+							</test>
+							<test val="2">
+								<code>
+									520
+								</code>
+							</test>
+						</si>
+					</suivant>
+				</question>
+			</situation>
+		</jeu>
+	</livre>
+</p:livres>
